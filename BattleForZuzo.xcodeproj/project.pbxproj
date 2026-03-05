@@ -1,0 +1,551 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		083E2758D8634DB658B6B9DF /* HexHighlighter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2097D8ABC7FFA8F440CA6111 /* HexHighlighter.swift */; };
+		129EEE8E963BFE75944CC9CC /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3530AA46AA1DD6E14D4C185 /* City.swift */; };
+		1602B475CA12CB9897A2ADE6 /* HexCoord.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01FC7AB3AE33573F604E75C /* HexCoord.swift */; };
+		23D47C3A78435706411549BF /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3694866BF610959433241F55 /* MainMenuView.swift */; };
+		33D534753F732D5A88BF5A1B /* HexLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BFF790906160F89169F355 /* HexLayout.swift */; };
+		35FB8E05896C9C3420FAA171 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E494A98FB3C5C6329F0D3EB /* GameState.swift */; };
+		3866AB9B37A3C6197AA2E0E3 /* UnitType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5E63FE55B473E19DE2BFF0 /* UnitType.swift */; };
+		3F6177DC1DA623CFF2335EF2 /* VictoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0D1CF5CA6231D1A0632B56 /* VictoryView.swift */; };
+		4496F5857B0BB735EC4E0E13 /* AIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3D15921288392EC4EB7351 /* AIController.swift */; };
+		47632B72194181B6B1A821C2 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A0F9BE6DB640A1CF5905EE /* Player.swift */; };
+		4A1A745A18EF7B0D29FCF7CD /* CombatSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E6D197C849B6C8906D3144 /* CombatSystem.swift */; };
+		4CB2B0F7405FF36F09D3E4CE /* Terrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D2396EB42DC3952E77E4ABB /* Terrain.swift */; };
+		59EEBC07388FE71625C683DB /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA06292662B32B0C15767C7 /* GameScene.swift */; };
+		637A3114345AFF21E9CC8764 /* HexDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EB95641CF22CFE2215C6A2 /* HexDirection.swift */; };
+		638E35B1B27643D095DA01C4 /* UnitRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944F8A274C081654AC09BEBD /* UnitRenderer.swift */; };
+		6A668EDBAA0652163509F0F8 /* AITactical.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D306124A4C007FAB3BE85A /* AITactical.swift */; };
+		6B32DD75141064CA4BFE61A3 /* Unit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725ED653674BE22D730F6895 /* Unit.swift */; };
+		765C5126552897AB4497E1E9 /* AIStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF53DAD9806F9D81A53C3EF /* AIStrategy.swift */; };
+		7E8D3FAF97FC3D1393547380 /* FogOfWarSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A121AB7D83A66510DFD3470 /* FogOfWarSystem.swift */; };
+		7F4BB21E8B4B2CE059FAD509 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152D3A87DFF7600785C9B431 /* ContentView.swift */; };
+		856A8814420955C62544B120 /* GameSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA41DD25F5281C9F5D0FF66 /* GameSetupView.swift */; };
+		8D50BB32DD18861303869D2F /* FogRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC092D71A3D20DBB0A906AE0 /* FogRenderer.swift */; };
+		8E28A5F917DA6404A1E53066 /* GameMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8054C78C793DBEEA78EDE3AA /* GameMap.swift */; };
+		96B9CF696BFFE84A86AEB170 /* GameHUDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A414D9F1A6FDF12C86E23E21 /* GameHUDView.swift */; };
+		985D5634891E5A8BA23125D0 /* CityRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1634E15CDB1C13868A992345 /* CityRenderer.swift */; };
+		994A657FE3A355F076191F59 /* CityInfoPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D3B59E063E4A3C21F99ABE /* CityInfoPanel.swift */; };
+		9BF71187221A103E5ECA3193 /* TurnManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A262F2C99708731730FE460D /* TurnManager.swift */; };
+		A96CBBC06753213A3553AE60 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A430BF50F68AA38BC11312A2 /* Extensions.swift */; };
+		B2A7A6FDDE779A2AD6AB8841 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269DB00750CFD41DF7104D3D /* Tile.swift */; };
+		B694B72BE864E1062AD4B3E2 /* MapGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDB527DC646A6E2C86DF5AA /* MapGenerator.swift */; };
+		BEB92346B8B583C6A383527E /* CameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACA43F851A2E528425743D9 /* CameraController.swift */; };
+		C1151F25933FE746C8716FB7 /* HexGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13F72E14CC179A0F6F8553B5 /* HexGrid.swift */; };
+		C28BC041145B91ED85E7ADA6 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C911B7C71C4EC3A3575C813F /* Constants.swift */; };
+		CC282E75638A657CB0ACE21A /* BattleForZuzoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA02A7A106F7EB5CB47A1A0 /* BattleForZuzoApp.swift */; };
+		CC94BA18955161034708BB9B /* UnitInfoPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC16F58BA66413BA3263704 /* UnitInfoPanel.swift */; };
+		D0687455C07D878E9DB04308 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 671E5B54412D9F8033A8454C /* Assets.xcassets */; };
+		D24CD139CC54EB74659D9708 /* CitySystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6C0814836013C39FAF70AE5 /* CitySystem.swift */; };
+		D44176C336B07B547801477D /* PriorityQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C74A2A949E4B2FC4AE8335 /* PriorityQueue.swift */; };
+		D4BF31516F8E0133E886F2DB /* VictorySystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550DB64F970F00AE74FC2909 /* VictorySystem.swift */; };
+		D58B9974619BF9414C1F4459 /* MapRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8392C1D1F6975E5EBF76985 /* MapRenderer.swift */; };
+		D78D4EA819E3D6131E92B522 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDF6397FEC957A40C2FFDDF5 /* AppState.swift */; };
+		D9F802612385B995E86D8F74 /* MovementSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DBAEEED516331DF4162D7C /* MovementSystem.swift */; };
+		EE643D64FFB32F8787C18FF7 /* AIPathfinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2E74E91E3206D2DECEFCE6 /* AIPathfinding.swift */; };
+		FB67042C9E5EE5AFB6B9AB19 /* UnitFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DF44B4195D120C97F1DC9A /* UnitFactory.swift */; };
+		AA1111111111111111111101 /* MapTopology.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2222222222222222222201 /* MapTopology.swift */; };
+		AA1111111111111111111102 /* TutorialSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2222222222222222222202 /* TutorialSystem.swift */; };
+		AA1111111111111111111103 /* TutorialOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2222222222222222222203 /* TutorialOverlayView.swift */; };
+		AA1111111111111111111104 /* MinimapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2222222222222222222204 /* MinimapView.swift */; };
+		AA1111111111111111111105 /* HowToPlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2222222222222222222205 /* HowToPlayView.swift */; };
+		AA1111111111111111111106 /* GamePersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2222222222222222222206 /* GamePersistence.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		13F72E14CC179A0F6F8553B5 /* HexGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexGrid.swift; sourceTree = "<group>"; };
+		152D3A87DFF7600785C9B431 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		1634E15CDB1C13868A992345 /* CityRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityRenderer.swift; sourceTree = "<group>"; };
+		1DDB527DC646A6E2C86DF5AA /* MapGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapGenerator.swift; sourceTree = "<group>"; };
+		2097D8ABC7FFA8F440CA6111 /* HexHighlighter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexHighlighter.swift; sourceTree = "<group>"; };
+		269DB00750CFD41DF7104D3D /* Tile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
+		3694866BF610959433241F55 /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
+		42DBAEEED516331DF4162D7C /* MovementSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovementSystem.swift; sourceTree = "<group>"; };
+		550DB64F970F00AE74FC2909 /* VictorySystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VictorySystem.swift; sourceTree = "<group>"; };
+		671E5B54412D9F8033A8454C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6CA02A7A106F7EB5CB47A1A0 /* BattleForZuzoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleForZuzoApp.swift; sourceTree = "<group>"; };
+		725ED653674BE22D730F6895 /* Unit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unit.swift; sourceTree = "<group>"; };
+		7A121AB7D83A66510DFD3470 /* FogOfWarSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FogOfWarSystem.swift; sourceTree = "<group>"; };
+		8054C78C793DBEEA78EDE3AA /* GameMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMap.swift; sourceTree = "<group>"; };
+		8D2396EB42DC3952E77E4ABB /* Terrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Terrain.swift; sourceTree = "<group>"; };
+		90D306124A4C007FAB3BE85A /* AITactical.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AITactical.swift; sourceTree = "<group>"; };
+		944F8A274C081654AC09BEBD /* UnitRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitRenderer.swift; sourceTree = "<group>"; };
+		95BFF790906160F89169F355 /* HexLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexLayout.swift; sourceTree = "<group>"; };
+		9C2E74E91E3206D2DECEFCE6 /* AIPathfinding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIPathfinding.swift; sourceTree = "<group>"; };
+		9E494A98FB3C5C6329F0D3EB /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
+		A262F2C99708731730FE460D /* TurnManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurnManager.swift; sourceTree = "<group>"; };
+		A414D9F1A6FDF12C86E23E21 /* GameHUDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameHUDView.swift; sourceTree = "<group>"; };
+		A430BF50F68AA38BC11312A2 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		A6EB95641CF22CFE2215C6A2 /* HexDirection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexDirection.swift; sourceTree = "<group>"; };
+		A97C29AD63741CF438998CE6 /* BattleForZuzo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BattleForZuzo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABA41DD25F5281C9F5D0FF66 /* GameSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSetupView.swift; sourceTree = "<group>"; };
+		AC5E63FE55B473E19DE2BFF0 /* UnitType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitType.swift; sourceTree = "<group>"; };
+		B5DF44B4195D120C97F1DC9A /* UnitFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitFactory.swift; sourceTree = "<group>"; };
+		BACA43F851A2E528425743D9 /* CameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraController.swift; sourceTree = "<group>"; };
+		BC092D71A3D20DBB0A906AE0 /* FogRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FogRenderer.swift; sourceTree = "<group>"; };
+		BDA06292662B32B0C15767C7 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		BDC16F58BA66413BA3263704 /* UnitInfoPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitInfoPanel.swift; sourceTree = "<group>"; };
+		C2C74A2A949E4B2FC4AE8335 /* PriorityQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityQueue.swift; sourceTree = "<group>"; };
+		C2E6D197C849B6C8906D3144 /* CombatSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombatSystem.swift; sourceTree = "<group>"; };
+		C911B7C71C4EC3A3575C813F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		CDF6397FEC957A40C2FFDDF5 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		D8392C1D1F6975E5EBF76985 /* MapRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRenderer.swift; sourceTree = "<group>"; };
+		E6C0814836013C39FAF70AE5 /* CitySystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitySystem.swift; sourceTree = "<group>"; };
+		E7A0F9BE6DB640A1CF5905EE /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		ED0D1CF5CA6231D1A0632B56 /* VictoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VictoryView.swift; sourceTree = "<group>"; };
+		F01FC7AB3AE33573F604E75C /* HexCoord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexCoord.swift; sourceTree = "<group>"; };
+		F3530AA46AA1DD6E14D4C185 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		F8D3B59E063E4A3C21F99ABE /* CityInfoPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityInfoPanel.swift; sourceTree = "<group>"; };
+		FB3D15921288392EC4EB7351 /* AIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIController.swift; sourceTree = "<group>"; };
+		FEF53DAD9806F9D81A53C3EF /* AIStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIStrategy.swift; sourceTree = "<group>"; };
+		AA2222222222222222222201 /* MapTopology.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTopology.swift; sourceTree = "<group>"; };
+		AA2222222222222222222202 /* TutorialSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialSystem.swift; sourceTree = "<group>"; };
+		AA2222222222222222222203 /* TutorialOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialOverlayView.swift; sourceTree = "<group>"; };
+		AA2222222222222222222204 /* MinimapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinimapView.swift; sourceTree = "<group>"; };
+		AA2222222222222222222205 /* HowToPlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HowToPlayView.swift; sourceTree = "<group>"; };
+		AA2222222222222222222206 /* GamePersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePersistence.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		29B2D46AA747A59804D46E1F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0EAB7458B5E343B5ED95EE6F /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				F8D3B59E063E4A3C21F99ABE /* CityInfoPanel.swift */,
+				A414D9F1A6FDF12C86E23E21 /* GameHUDView.swift */,
+				ABA41DD25F5281C9F5D0FF66 /* GameSetupView.swift */,
+				AA2222222222222222222205 /* HowToPlayView.swift */,
+				3694866BF610959433241F55 /* MainMenuView.swift */,
+				AA2222222222222222222204 /* MinimapView.swift */,
+				AA2222222222222222222202 /* TutorialSystem.swift */,
+				AA2222222222222222222203 /* TutorialOverlayView.swift */,
+				BDC16F58BA66413BA3263704 /* UnitInfoPanel.swift */,
+				ED0D1CF5CA6231D1A0632B56 /* VictoryView.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		257CC059DE3069BE8B8EF4A7 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				F3530AA46AA1DD6E14D4C185 /* City.swift */,
+				8054C78C793DBEEA78EDE3AA /* GameMap.swift */,
+				1DDB527DC646A6E2C86DF5AA /* MapGenerator.swift */,
+				AA2222222222222222222201 /* MapTopology.swift */,
+				8D2396EB42DC3952E77E4ABB /* Terrain.swift */,
+				269DB00750CFD41DF7104D3D /* Tile.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		30772F61AC9BDC8631745269 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A97C29AD63741CF438998CE6 /* BattleForZuzo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		450B220DE8EEB27904FC3DC4 = {
+			isa = PBXGroup;
+			children = (
+				A0BD82D602188F24EA1D6BCE /* BattleForZuzo */,
+				30772F61AC9BDC8631745269 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7C04393FFC3E1858D1BF2906 /* Units */ = {
+			isa = PBXGroup;
+			children = (
+				725ED653674BE22D730F6895 /* Unit.swift */,
+				B5DF44B4195D120C97F1DC9A /* UnitFactory.swift */,
+				AC5E63FE55B473E19DE2BFF0 /* UnitType.swift */,
+			);
+			path = Units;
+			sourceTree = "<group>";
+		};
+		94EC979C78A1C9E483FAC308 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				C911B7C71C4EC3A3575C813F /* Constants.swift */,
+				A430BF50F68AA38BC11312A2 /* Extensions.swift */,
+				C2C74A2A949E4B2FC4AE8335 /* PriorityQueue.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		9A2BC3227C890E2FE084077D /* Rendering */ = {
+			isa = PBXGroup;
+			children = (
+				BACA43F851A2E528425743D9 /* CameraController.swift */,
+				1634E15CDB1C13868A992345 /* CityRenderer.swift */,
+				BC092D71A3D20DBB0A906AE0 /* FogRenderer.swift */,
+				2097D8ABC7FFA8F440CA6111 /* HexHighlighter.swift */,
+				D8392C1D1F6975E5EBF76985 /* MapRenderer.swift */,
+				944F8A274C081654AC09BEBD /* UnitRenderer.swift */,
+			);
+			path = Rendering;
+			sourceTree = "<group>";
+		};
+		9CF43B31E8845D861542A38E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BCFB57E48A2DC6F77DDBE009 /* Hex */,
+				257CC059DE3069BE8B8EF4A7 /* Map */,
+				7C04393FFC3E1858D1BF2906 /* Units */,
+				E7A0F9BE6DB640A1CF5905EE /* Player.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A0BD82D602188F24EA1D6BCE /* BattleForZuzo */ = {
+			isa = PBXGroup;
+			children = (
+				FE910D29D648D8F2EA669AEF /* App */,
+				9CF43B31E8845D861542A38E /* Models */,
+				D9902DBA85A52183C7DB94F3 /* Logic */,
+				A45D89AACA44A499153E49CD /* AI */,
+				B984C077E13FA4A49DCC0A54 /* Scenes */,
+				9A2BC3227C890E2FE084077D /* Rendering */,
+				0EAB7458B5E343B5ED95EE6F /* UI */,
+				94EC979C78A1C9E483FAC308 /* Utilities */,
+				671E5B54412D9F8033A8454C /* Assets.xcassets */,
+			);
+			path = BattleForZuzo;
+			sourceTree = "<group>";
+		};
+		A45D89AACA44A499153E49CD /* AI */ = {
+			isa = PBXGroup;
+			children = (
+				FB3D15921288392EC4EB7351 /* AIController.swift */,
+				9C2E74E91E3206D2DECEFCE6 /* AIPathfinding.swift */,
+				FEF53DAD9806F9D81A53C3EF /* AIStrategy.swift */,
+				90D306124A4C007FAB3BE85A /* AITactical.swift */,
+			);
+			path = AI;
+			sourceTree = "<group>";
+		};
+		B984C077E13FA4A49DCC0A54 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				BDA06292662B32B0C15767C7 /* GameScene.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		BCFB57E48A2DC6F77DDBE009 /* Hex */ = {
+			isa = PBXGroup;
+			children = (
+				F01FC7AB3AE33573F604E75C /* HexCoord.swift */,
+				A6EB95641CF22CFE2215C6A2 /* HexDirection.swift */,
+				13F72E14CC179A0F6F8553B5 /* HexGrid.swift */,
+				95BFF790906160F89169F355 /* HexLayout.swift */,
+			);
+			path = Hex;
+			sourceTree = "<group>";
+		};
+		D9902DBA85A52183C7DB94F3 /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				E6C0814836013C39FAF70AE5 /* CitySystem.swift */,
+				C2E6D197C849B6C8906D3144 /* CombatSystem.swift */,
+				7A121AB7D83A66510DFD3470 /* FogOfWarSystem.swift */,
+				42DBAEEED516331DF4162D7C /* MovementSystem.swift */,
+				A262F2C99708731730FE460D /* TurnManager.swift */,
+				550DB64F970F00AE74FC2909 /* VictorySystem.swift */,
+			);
+			path = Logic;
+			sourceTree = "<group>";
+		};
+		FE910D29D648D8F2EA669AEF /* App */ = {
+			isa = PBXGroup;
+			children = (
+				CDF6397FEC957A40C2FFDDF5 /* AppState.swift */,
+				6CA02A7A106F7EB5CB47A1A0 /* BattleForZuzoApp.swift */,
+				152D3A87DFF7600785C9B431 /* ContentView.swift */,
+				AA2222222222222222222206 /* GamePersistence.swift */,
+				9E494A98FB3C5C6329F0D3EB /* GameState.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		42AEFBAE01D2DFD981F7DA7D /* BattleForZuzo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7A97A35160987A8F39536D2C /* Build configuration list for PBXNativeTarget "BattleForZuzo" */;
+			buildPhases = (
+				E7209FB05162B7572F88D05E /* Sources */,
+				29B2D46AA747A59804D46E1F /* Frameworks */,
+				66F8606E9F0A136E2228EBCB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BattleForZuzo;
+			productName = BattleForZuzo;
+			productReference = A97C29AD63741CF438998CE6 /* BattleForZuzo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		46F86FAA6BBF9AC94A7E4595 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+			};
+			buildConfigurationList = CB7CBE0C3B42E7D081FECC31 /* Build configuration list for PBXProject "BattleForZuzo" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 450B220DE8EEB27904FC3DC4;
+			productRefGroup = 30772F61AC9BDC8631745269 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				42AEFBAE01D2DFD981F7DA7D /* BattleForZuzo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		66F8606E9F0A136E2228EBCB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0687455C07D878E9DB04308 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E7209FB05162B7572F88D05E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				994A657FE3A355F076191F59 /* CityInfoPanel.swift in Sources */,
+				96B9CF696BFFE84A86AEB170 /* GameHUDView.swift in Sources */,
+				856A8814420955C62544B120 /* GameSetupView.swift in Sources */,
+				23D47C3A78435706411549BF /* MainMenuView.swift in Sources */,
+				CC94BA18955161034708BB9B /* UnitInfoPanel.swift in Sources */,
+				3F6177DC1DA623CFF2335EF2 /* VictoryView.swift in Sources */,
+				59EEBC07388FE71625C683DB /* GameScene.swift in Sources */,
+				D78D4EA819E3D6131E92B522 /* AppState.swift in Sources */,
+				CC282E75638A657CB0ACE21A /* BattleForZuzoApp.swift in Sources */,
+				7F4BB21E8B4B2CE059FAD509 /* ContentView.swift in Sources */,
+				35FB8E05896C9C3420FAA171 /* GameState.swift in Sources */,
+				D24CD139CC54EB74659D9708 /* CitySystem.swift in Sources */,
+				4A1A745A18EF7B0D29FCF7CD /* CombatSystem.swift in Sources */,
+				7E8D3FAF97FC3D1393547380 /* FogOfWarSystem.swift in Sources */,
+				D9F802612385B995E86D8F74 /* MovementSystem.swift in Sources */,
+				9BF71187221A103E5ECA3193 /* TurnManager.swift in Sources */,
+				D4BF31516F8E0133E886F2DB /* VictorySystem.swift in Sources */,
+				47632B72194181B6B1A821C2 /* Player.swift in Sources */,
+				1602B475CA12CB9897A2ADE6 /* HexCoord.swift in Sources */,
+				637A3114345AFF21E9CC8764 /* HexDirection.swift in Sources */,
+				C1151F25933FE746C8716FB7 /* HexGrid.swift in Sources */,
+				33D534753F732D5A88BF5A1B /* HexLayout.swift in Sources */,
+				6B32DD75141064CA4BFE61A3 /* Unit.swift in Sources */,
+				FB67042C9E5EE5AFB6B9AB19 /* UnitFactory.swift in Sources */,
+				3866AB9B37A3C6197AA2E0E3 /* UnitType.swift in Sources */,
+				129EEE8E963BFE75944CC9CC /* City.swift in Sources */,
+				8E28A5F917DA6404A1E53066 /* GameMap.swift in Sources */,
+				B694B72BE864E1062AD4B3E2 /* MapGenerator.swift in Sources */,
+				4CB2B0F7405FF36F09D3E4CE /* Terrain.swift in Sources */,
+				B2A7A6FDDE779A2AD6AB8841 /* Tile.swift in Sources */,
+				C28BC041145B91ED85E7ADA6 /* Constants.swift in Sources */,
+				A96CBBC06753213A3553AE60 /* Extensions.swift in Sources */,
+				D44176C336B07B547801477D /* PriorityQueue.swift in Sources */,
+				4496F5857B0BB735EC4E0E13 /* AIController.swift in Sources */,
+				EE643D64FFB32F8787C18FF7 /* AIPathfinding.swift in Sources */,
+				765C5126552897AB4497E1E9 /* AIStrategy.swift in Sources */,
+				6A668EDBAA0652163509F0F8 /* AITactical.swift in Sources */,
+				BEB92346B8B583C6A383527E /* CameraController.swift in Sources */,
+				985D5634891E5A8BA23125D0 /* CityRenderer.swift in Sources */,
+				8D50BB32DD18861303869D2F /* FogRenderer.swift in Sources */,
+				083E2758D8634DB658B6B9DF /* HexHighlighter.swift in Sources */,
+				D58B9974619BF9414C1F4459 /* MapRenderer.swift in Sources */,
+				638E35B1B27643D095DA01C4 /* UnitRenderer.swift in Sources */,
+				AA1111111111111111111101 /* MapTopology.swift in Sources */,
+				AA1111111111111111111102 /* TutorialSystem.swift in Sources */,
+				AA1111111111111111111103 /* TutorialOverlayView.swift in Sources */,
+				AA1111111111111111111104 /* MinimapView.swift in Sources */,
+				AA1111111111111111111105 /* HowToPlayView.swift in Sources */,
+				AA1111111111111111111106 /* GamePersistence.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		7BF40F069D95C38DE60AA602 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8EE6B6ADC095CDC56BE16A9E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = B886K76GS8;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.strategy-games";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.battleforzuzo.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C25F4F6540DF31069317F7C3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = B886K76GS8;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.strategy-games";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.battleforzuzo.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		EC86DC4F4B4C60C3EC031655 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7A97A35160987A8F39536D2C /* Build configuration list for PBXNativeTarget "BattleForZuzo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8EE6B6ADC095CDC56BE16A9E /* Debug */,
+				C25F4F6540DF31069317F7C3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CB7CBE0C3B42E7D081FECC31 /* Build configuration list for PBXProject "BattleForZuzo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EC86DC4F4B4C60C3EC031655 /* Debug */,
+				7BF40F069D95C38DE60AA602 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 46F86FAA6BBF9AC94A7E4595 /* Project object */;
+}
