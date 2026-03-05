@@ -277,15 +277,10 @@ struct GameHUDView: View {
             if unit.type == .construction {
                 let tile = gs.map?.tile(at: unit.position)
                 let alreadyRoad = tile?.hasRoad ?? false
-                let isDeepWater = tile?.terrain == .deepWater
                 if alreadyRoad {
                     Text("Road")
                         .font(.system(size: 9, design: .monospaced))
                         .foregroundColor(.green)
-                } else if isDeepWater {
-                    Text("Deep water")
-                        .font(.system(size: 9, design: .monospaced))
-                        .foregroundColor(.gray)
                 }
             }
         }
@@ -420,9 +415,8 @@ struct GameHUDView: View {
 
     private func buildRoadButton(for unit: Unit) -> some View {
         let tile = gs.map?.tile(at: unit.position)
-        let isDeepWater = tile?.terrain == .deepWater
         let alreadyRoad = tile?.hasRoad ?? false
-        let canBuild = unit.canBuildRoad && !isDeepWater && !alreadyRoad
+        let canBuild = unit.canBuildRoad && !alreadyRoad
 
         return Button(action: {
             appState.gameState.buildRoad(with: unit)

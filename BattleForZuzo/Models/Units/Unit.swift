@@ -37,7 +37,7 @@ class Unit: Identifiable, Codable {
         switch type.terrainAccess {
         case .land:
             if type == .tank { return terrain.isLand }  // Tanks cross all land including mountains
-            if type == .construction { return terrain != .deepWater }  // Construction crosses everything except deep water
+            if type == .construction { return true }  // Construction crosses all terrain (builds bridges on water)
             return terrain.isLand && terrain != .mountain
         case .water: return terrain.isWater
         case .any: return true

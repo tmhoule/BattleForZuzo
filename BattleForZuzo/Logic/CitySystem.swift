@@ -13,12 +13,6 @@ class CitySystem {
 
         let playerCities = map.citiesForPlayer(playerID)
         for city in playerCities {
-            // Check for conquest: enemy unit on city
-            if let occupant = gameState.unit(at: city.position), occupant.ownerID != playerID {
-                conquerCity(city, by: occupant.ownerID)
-                continue
-            }
-
             // Advance production
             if let completedType = city.advanceProduction() {
                 spawnUnit(type: completedType, at: city)

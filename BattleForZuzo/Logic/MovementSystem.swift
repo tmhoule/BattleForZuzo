@@ -94,6 +94,18 @@ class MovementSystem {
         unit.movementRemaining = max(0.0, unit.movementRemaining - cost)
         unit.position = destination
 
+        // Auto-load onto carrier if a friendly carrier is at the destination
+        if unit.type.terrainAccess == .land {
+            if let carrier = gameState.units.first(where: {
+                $0.position == destination && $0.type.canCarryUnits &&
+                $0.ownerID == unit.ownerID && $0.id != unit.id && $0.isAlive
+            }), unit.canLoadOnto(carrier) {
+                carrier.carriedUnits.append(unit)
+                unit.isLoaded = true
+                unit.movementRemaining = 0
+            }
+        }
+
         return true
     }
 

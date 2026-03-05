@@ -124,9 +124,6 @@ class GameCoordinator: ObservableObject, GameSceneDelegate {
            selected.ownerID == gameState.currentPlayer?.id,
            gameState.reachableHexes.contains(city.position) {
             _ = gameState.moveUnit(selected, to: city.position)
-            if city.ownerID != selected.ownerID {
-                gameState.citySystem?.checkConquest(at: city.position, by: selected.ownerID)
-            }
             gameState.selectUnit(selected)  // Re-select to update reachable
             scene.updateRendering()
             return
@@ -148,6 +145,19 @@ class GameCoordinator: ObservableObject, GameSceneDelegate {
             gameState.selectUnit(selected)  // Re-select to update reachable
             scene.updateRendering()
             return
+        }
+
+        // If selected unit is a carrier with cargo, try to unload
+        if let selected = gameState.selectedUnit,
+           selected.ownerID == gameState.currentPlayer?.id,
+           selected.type.canCarryUnits,
+           !selected.carriedUnits.isEmpty {
+            if gameState.unloadUnit(from: selected, to: coord) {
+                gameState.statusMessage = "Unit disembarked!"
+                gameState.selectUnit(selected)
+                scene.updateRendering()
+                return
+            }
         }
 
         gameState.clearSelection()

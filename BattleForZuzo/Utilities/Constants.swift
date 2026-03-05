@@ -38,7 +38,6 @@ enum Constants {
     }
 
     // MARK: - Terrain Thresholds
-    static let deepWaterThreshold: Double = -0.3
     static let waterThreshold: Double = -0.1
     static let marshThreshold: Double = 0.05
     static let flatLandThreshold: Double = 0.35

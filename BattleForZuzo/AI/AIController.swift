@@ -50,10 +50,6 @@ class AIController {
             ) ?? []
             if !path.isEmpty {
                 _ = gameState.moveUnit(unit, to: destination)
-                // Check if we moved onto a neutral city
-                if let city = gameState.map?.city(at: destination), city.isNeutral {
-                    gameState.citySystem?.checkConquest(at: destination, by: unit.ownerID)
-                }
             }
 
         case .attack(let targetID):

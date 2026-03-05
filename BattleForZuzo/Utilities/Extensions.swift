@@ -189,24 +189,6 @@ extension SKTexture {
                 context.strokePath()
             }
 
-        case .deepWater:
-            // Deeper wave lines
-            let waveColor = SKColor(red: 0.15, green: 0.25, blue: 0.50, alpha: 0.3).cgColor
-            context.setStrokeColor(waveColor)
-            context.setLineWidth(1.5)
-            for i in 0..<3 {
-                let dy = CGFloat(i) * 7 - 7
-                let wavePath = CGMutablePath()
-                wavePath.move(to: CGPoint(x: center.x - size * 0.5, y: center.y + dy))
-                for step in stride(from: -size * 0.5, to: size * 0.5, by: 3) {
-                    let x = center.x + step
-                    let y = center.y + dy + sin(step * 0.4) * 3
-                    wavePath.addLine(to: CGPoint(x: x, y: y))
-                }
-                context.addPath(wavePath)
-                context.strokePath()
-            }
-
         case .marsh:
             // Reed lines — short vertical strokes
             let reedColor = SKColor(red: 0.30, green: 0.38, blue: 0.18, alpha: 0.5).cgColor
@@ -264,19 +246,23 @@ extension SKTexture {
             context.addPath(path)
             context.clip()
 
-            // Base fog color
-            context.setFillColor(SKColor(white: 0.0, alpha: alpha).cgColor)
+            // Dark base layer
+            context.setFillColor(SKColor(white: 0.0, alpha: alpha * 0.85).cgColor)
             context.fill(CGRect(x: 0, y: 0, width: diameter, height: diameter))
 
-            // Subtle noise dots for cloud effect
-            let noiseAlpha = alpha * 0.3
-            for _ in 0..<20 {
-                let x = CGFloat.random(in: 0..<diameter)
-                let y = CGFloat.random(in: 0..<diameter)
-                let r = CGFloat.random(in: 2...6)
-                let brightness = CGFloat.random(in: 0.05...0.15)
-                context.setFillColor(SKColor(white: brightness, alpha: noiseAlpha).cgColor)
-                context.fillEllipse(in: CGRect(x: x - r, y: y - r, width: r * 2, height: r * 2))
+            // Haze/fog effect — soft radial gradient from edges
+            let colorSpace = CGColorSpaceCreateDeviceRGB()
+            let hazeColors = [
+                SKColor(white: 0.15, alpha: alpha * 0.4).cgColor,
+                SKColor(white: 0.05, alpha: alpha * 0.1).cgColor
+            ] as CFArray
+            if let gradient = CGGradient(colorsSpace: colorSpace, colors: hazeColors, locations: [0.0, 1.0]) {
+                context.drawRadialGradient(
+                    gradient,
+                    startCenter: center, startRadius: 0,
+                    endCenter: center, endRadius: size * 0.9,
+                    options: []
+                )
             }
 
             context.restoreGState()

@@ -68,6 +68,7 @@ class UnitRenderer {
                 // Update HP and movement indicators
                 updateHealthBar(on: existingNode, unit: unit)
                 updateMovementPips(on: existingNode, unit: unit)
+                updateCargoBadge(on: existingNode, unit: unit)
             } else {
                 // Create new unit node
                 let node = createUnitNode(unit: unit, color: playerColor)
@@ -411,6 +412,34 @@ class UnitRenderer {
             pip.strokeColor = .clear
             pipContainer.addChild(pip)
         }
+    }
+
+    private func updateCargoBadge(on node: SKNode, unit: Unit) {
+        // Remove existing badge
+        node.childNode(withName: "cargoBadge")?.removeFromParent()
+
+        guard unit.type.canCarryUnits, !unit.carriedUnits.isEmpty else { return }
+
+        let size = Constants.hexSize * 1.2
+        let badge = SKNode()
+        badge.name = "cargoBadge"
+        badge.position = CGPoint(x: size / 2 + 2, y: size / 2 + 2)
+
+        let bg = SKShapeNode(circleOfRadius: 6)
+        bg.fillColor = .orange
+        bg.strokeColor = .white
+        bg.lineWidth = 1
+        badge.addChild(bg)
+
+        let label = SKLabelNode(text: "\(unit.carriedUnits.count)")
+        label.fontName = "Menlo-Bold"
+        label.fontSize = 8
+        label.fontColor = .white
+        label.verticalAlignmentMode = .center
+        label.horizontalAlignmentMode = .center
+        badge.addChild(label)
+
+        node.addChild(badge)
     }
 
     func unitNode(for unitID: UUID) -> SKNode? {

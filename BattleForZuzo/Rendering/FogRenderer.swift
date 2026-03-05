@@ -17,8 +17,8 @@ class FogRenderer {
     }
 
     private func buildTextures() {
-        blackTexture = SKTexture.fogHexTexture(size: layout.size, alpha: 1.0)
-        greyTexture = SKTexture.fogHexTexture(size: layout.size, alpha: 0.5)
+        blackTexture = SKTexture.hexTexture(size: layout.size, color: .black)
+        greyTexture = SKTexture.fogHexTexture(size: layout.size, alpha: 0.65)
     }
 
     func initializeFog(for map: GameMap) {
@@ -31,6 +31,7 @@ class FogRenderer {
             let sprite = SKSpriteNode(texture: blackTexture)
             sprite.position = position
             sprite.zPosition = Constants.zFog
+            sprite.setScale(1.08)
             fogLayer.addChild(sprite)
             fogNodes[coord] = sprite
         }
@@ -45,6 +46,7 @@ class FogRenderer {
                     let sprite = SKSpriteNode(texture: blackTexture)
                     sprite.position = CGPoint(x: basePos.x + mapPixelWidth, y: basePos.y)
                     sprite.zPosition = Constants.zFog
+                    sprite.setScale(1.08)
                     fogLayer.addChild(sprite)
                     ghostFogNodes["r_\(col)_\(row)"] = sprite
                 }
@@ -54,6 +56,7 @@ class FogRenderer {
                     let sprite = SKSpriteNode(texture: blackTexture)
                     sprite.position = CGPoint(x: basePos.x - mapPixelWidth, y: basePos.y)
                     sprite.zPosition = Constants.zFog
+                    sprite.setScale(1.08)
                     fogLayer.addChild(sprite)
                     ghostFogNodes["l_\(col)_\(row)"] = sprite
                 }

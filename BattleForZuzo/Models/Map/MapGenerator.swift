@@ -39,8 +39,12 @@ class MapGenerator {
         // Smooth terrain clusters — similar terrain groups together
         smoothTerrain(on: map, width: w, height: h, iterations: 4)
 
-        // Enforce minimum water group sizes
+        // Ensure every tile has at least 2 same-terrain neighbors
+        enforceMinimumNeighbors(on: map, minSame: 2, maxPasses: 6)
+
+        // Enforce minimum group sizes
         enforceMinimumWaterGroups(on: map)
+        enforceMinimumLandGroups(on: map, minSize: 30)
 
         // Remove inland water: continents get one solid landmass, islands get clean shorelines
         if mapType == .continents || mapType == .islands {
@@ -147,9 +151,7 @@ class MapGenerator {
     }
 
     private func terrainForElevation(_ elevation: Double) -> Terrain {
-        if elevation < Constants.deepWaterThreshold {
-            return .deepWater
-        } else if elevation < Constants.waterThreshold {
+        if elevation < Constants.waterThreshold {
             return .water
         } else if elevation < Constants.marshThreshold {
             return .marsh
@@ -203,27 +205,56 @@ class MapGenerator {
         }
     }
 
-    // MARK: - Water Group Enforcement
+    // MARK: - Minimum Same-Terrain Neighbors
 
-    /// Convert small isolated water groups to land terrain
-    private func enforceMinimumWaterGroups(on map: GameMap) {
-        let minDeepWater = 30
-        let minShallowWater = 5
+    /// Ensures every tile has at least `minSame` neighbors of the same terrain type.
+    /// Tiles that don't meet the threshold adopt their most common neighbor terrain.
+    private func enforceMinimumNeighbors(on map: GameMap, minSame: Int, maxPasses: Int) {
+        for _ in 0..<maxPasses {
+            var changes: [(HexCoord, Terrain)] = []
 
-        // Find connected components for deep water
-        let deepWaterGroups = findConnectedGroups(on: map, matching: { $0 == .deepWater })
-        for group in deepWaterGroups where group.count < minDeepWater {
-            // Convert small deep water groups to shallow water
-            for coord in group {
+            for coord in map.allCoords {
+                guard let tile = map.tiles[coord] else { continue }
+                let neighbors = map.neighbors(of: coord)
+
+                // Count neighbors with same terrain
+                let sameCount = neighbors.count { neighbor in
+                    map.tiles[neighbor]?.terrain == tile.terrain
+                }
+
+                if sameCount < minSame {
+                    // Adopt the most common neighbor terrain
+                    var counts: [Terrain: Int] = [:]
+                    for neighbor in neighbors {
+                        if let nTerrain = map.tiles[neighbor]?.terrain {
+                            counts[nTerrain, default: 0] += 1
+                        }
+                    }
+                    if let (dominant, _) = counts.max(by: { $0.value < $1.value }),
+                       dominant != tile.terrain {
+                        changes.append((coord, dominant))
+                    }
+                }
+            }
+
+            guard !changes.isEmpty else { break }
+
+            for (coord, newTerrain) in changes {
                 if var tile = map.tiles[coord] {
-                    tile.terrain = .water
-                    tile.elevation = elevationForTerrain(.water)
+                    tile.terrain = newTerrain
+                    tile.elevation = elevationForTerrain(newTerrain)
                     map.tiles[coord] = tile
                 }
             }
         }
+    }
 
-        // Find connected components for all water (shallow, including converted deep)
+    // MARK: - Water Group Enforcement
+
+    /// Convert small isolated water groups to land terrain
+    private func enforceMinimumWaterGroups(on map: GameMap) {
+        let minShallowWater = 5
+
         let waterGroups = findConnectedGroups(on: map, matching: { $0 == .water })
         for group in waterGroups where group.count < minShallowWater {
             // Convert small water groups to the most common adjacent land terrain
@@ -232,6 +263,20 @@ class MapGenerator {
                 if var tile = map.tiles[coord] {
                     tile.terrain = replacement
                     tile.elevation = elevationForTerrain(replacement)
+                    map.tiles[coord] = tile
+                }
+            }
+        }
+    }
+
+    /// Convert small isolated land groups to water
+    private func enforceMinimumLandGroups(on map: GameMap, minSize: Int) {
+        let landGroups = findConnectedGroups(on: map, matching: { $0.isLand })
+        for group in landGroups where group.count < minSize {
+            for coord in group {
+                if var tile = map.tiles[coord] {
+                    tile.terrain = .water
+                    tile.elevation = elevationForTerrain(.water)
                     map.tiles[coord] = tile
                 }
             }
@@ -326,7 +371,6 @@ class MapGenerator {
     /// Approximate elevation for a given terrain (used during smoothing)
     private func elevationForTerrain(_ terrain: Terrain) -> Double {
         switch terrain {
-        case .deepWater: return Constants.deepWaterThreshold - 0.1
         case .water: return Constants.waterThreshold - 0.05
         case .marsh: return Constants.marshThreshold - 0.02
         case .flatLand: return (Constants.marshThreshold + Constants.flatLandThreshold) / 2

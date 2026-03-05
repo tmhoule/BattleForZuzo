@@ -45,8 +45,8 @@ class TurnManager {
         // Process city production and conquest
         gameState.citySystem?.processCities(for: player.id)
 
-        // Check for conquest when moving onto neutral cities
-        checkNeutralCityConquests(for: player)
+        // Capture any cities occupied by this player's units
+        checkCityConquests(for: player)
 
         // Update fog of war
         gameState.fogOfWarSystem?.updateVisibility(for: player)
@@ -73,12 +73,12 @@ class TurnManager {
         }
     }
 
-    private func checkNeutralCityConquests(for player: Player) {
+    private func checkCityConquests(for player: Player) {
         guard let map = gameState.map else { return }
         let playerUnits = gameState.units(for: player.id)
 
         for unit in playerUnits {
-            if let city = map.city(at: unit.position), city.isNeutral {
+            if let city = map.city(at: unit.position), city.ownerID != player.id {
                 gameState.citySystem?.checkConquest(at: unit.position, by: player.id)
             }
         }

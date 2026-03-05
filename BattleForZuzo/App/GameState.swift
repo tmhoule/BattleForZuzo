@@ -228,7 +228,7 @@ class GameState: ObservableObject {
         guard unit.type == .construction, unit.movementRemaining >= 2 else { return }
         guard let map = map else { return }
         guard var tile = map.tile(at: unit.position) else { return }
-        guard tile.terrain != .deepWater, !tile.hasRoad else { return }
+        guard !tile.hasRoad else { return }
         tile.hasRoad = true
         map.setTile(tile, at: unit.position)
         unit.movementRemaining = 0
@@ -242,6 +242,30 @@ class GameState: ObservableObject {
 
     func removeUnit(_ unit: Unit) {
         units.removeAll { $0.id == unit.id }
+    }
+
+    func unloadUnit(from carrier: Unit, to destination: HexCoord) -> Bool {
+        guard let map = map else { return false }
+        guard carrier.type.canCarryUnits, !carrier.carriedUnits.isEmpty else { return false }
+        guard carrier.position.distance(to: destination) == 1 else { return false }
+        guard let tile = map.tile(at: destination) else { return false }
+
+        // Find a carried unit that can traverse the destination terrain
+        guard let unitIndex = carrier.carriedUnits.firstIndex(where: {
+            $0.canTraverse(terrain: tile.terrain)
+        }) else { return false }
+
+        // Make sure no unit is already there
+        guard unit(at: destination) == nil else { return false }
+
+        let unloaded = carrier.carriedUnits.remove(at: unitIndex)
+        unloaded.isLoaded = false
+        unloaded.position = destination
+        unloaded.movementRemaining = 0  // Can't move after unloading
+
+        fogOfWarSystem?.updateVisibility(for: currentPlayer!)
+        objectWillChange.send()
+        return true
     }
 
     // MARK: - Restore from Save
